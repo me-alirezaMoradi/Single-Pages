@@ -401,4 +401,45 @@ body {
 
     }
   }
+
+  footer {
+    @include Grid(4, 12);
+    grid-area: 10/1/-1/-1;
+    height: 30rem;
+    background: $blue-1;
+    background-size: cover;
+
+    p:nth-child(1) {
+      grid-area: 1/2/3/4;
+      justify-self: center;
+      align-self: center;
+      font: {
+        family: 'Dancing-B';
+        size: 5rem;
+      }
+      color: $white; 
+    }
+
+    ul {
+      grid-area: 2/5/-1/-2;
+      list-style: none;
+
+      a {
+        color: $white;
+
+        &:hover {
+          color: $orange-1;
+        }
+      }
+    }
+
+    span {
+      @include Flex(column, nowrap, center, center);
+      grid-area: 1/-2/2/-1;
+      width: 50%;
+      height: 80%;
+      transform: rotate(270deg) translateX(3rem);
+      cursor: pointer;
+    }
+  }
 }
