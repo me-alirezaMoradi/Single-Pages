@@ -17,10 +17,13 @@
     <!-- styles -->
     <link rel="stylesheet" href="./assets/styles/css/home.css" />
     <!-- scripts -->
+    <script src="./assets/scripts/data.js" defer></script>
     <script src="./assets/scripts/app.js" defer></script>
   </head>
   <body>
     <main>
+      <audio src="" id="audio" controls></audio>
+
       <header>
         <h1>Your Sound track, Your Story,<br />Unleash the Rhythm</h1>
       </header>
@@ -36,23 +39,23 @@
           src="./assets/pictures/icons/arrow.png"
           alt="arrow-icon" 
         />
-        <ul>
-          <li>
+        <ul id="songs">
+          <li class="song">
             <div id="thumbnail" class="song-1"></div>
             <p id="musicName">Hello</p>
             <p id="singerName">Adele</p>
           </li>
-          <li>
+          <li class="song">
             <div id="thumbnail" class="song-2"></div>
             <p id="musicName">Rolling in the Deep</p>
             <p id="singerName">Adele</p>
           </li>
-          <li>
+          <li class="song">
             <div id="thumbnail" class="song-3"></div>
-            <p id="musicName">Set fire</p>
+            <p id="musicName">Set Fire</p>
             <p id="singerName">Adele</p>
           </li>
-          <li>
+          <li class="song">
             <div id="thumbnail" class="song-4"></div>
             <p id="musicName">One and Only</p>
             <p id="singerName">Adele</p>
@@ -167,8 +170,8 @@
             alt="icon"
           />
           <img 
-            id="playBtn"
-            src="./assets/pictures/icons/pause.png"
+            id="play"
+            src="./assets/pictures/icons/play.png"
             alt="icon"
           />
           <img 
@@ -178,16 +181,25 @@
           />
         </div>
         <div id="duration">
-          <input type="range" />
-          <progress value="50" min="0" max="100"></progress>
+          <time id="minTime"></time>
+          <time id="maxTime"></time>
+          <input type="range" value="0" max="100" />
+          <progress value="0" min="0" max="100"></progress>
         </div>
         <div id="soundBtn">
           <img 
             src="./assets/pictures/icons/volume.png"
             alt="icon" 
           />
-          <input type="range" />
-          <progress value="50" min="0" max="100"></progress>
+          <label for="soundRange">10 %</label>
+          <input id="soundRange" type="range" value="10"/>
+          <progress 
+            id="soundProgress" 
+            value="10"
+            min="0" 
+            max="100"
+          >
+          </progress>
         </div>
       </section>
     </main>
