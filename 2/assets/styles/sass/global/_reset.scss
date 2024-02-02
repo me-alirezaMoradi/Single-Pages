@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+:root {
+  font: {
+    family: 'OpenSans-R';
+    size: 10px;
+  }
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+body {
+  height: 100dvh;
+}

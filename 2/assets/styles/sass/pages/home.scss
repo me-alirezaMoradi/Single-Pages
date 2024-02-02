@@ -1,0 +1,86 @@
+@use '../global/' as *;
+@use '../layouts/' as *;
+@use '../utils/' as *;
+
+body {
+  @include Grid(12, 12);
+  background: $blue-3;
+
+  main {
+    @include Grid(12, 12);
+    grid-area: 1/1/-1/-1;
+
+    #sideMenu {
+      @include Grid(12, 4);
+      grid-area: 1/1/-1/4;
+      padding-left: 2rem;
+      box-shadow: 0 .1rem .5rem $white;
+
+      h3 {
+        color: $white;
+        font-size: 2.5rem
+      }
+
+      & > h3 {
+        @include Flex(row, nowrap, start, center);
+        grid-area: 1/1/2/-1;
+        align-self: center;
+        font-size: 2rem;
+        
+        img {
+          width: 5rem;
+        }
+      }
+      
+      ul {
+        @include Flex(column, nowrap, space-between, start);
+        gap: 2rem;
+        list-style: none;
+        
+        li {
+          @include Flex(row, nowrap, start, center);
+          gap: 1rem;
+
+          img {
+            width: 2rem;
+          }
+
+          a {
+            color: $gray;
+  
+            &:hover {
+              color: $green-1;
+            }
+          }
+        }
+      }
+
+      #recommend {
+        grid-area: 2/1/6/-1;
+      }
+
+      #playList {
+        grid-area: 8/1/11/-1;
+
+        h3 {
+          @include Flex(row, nowrap, space-between, center);
+          width: 33rem;
+
+          span {
+            @include Flex(row, nowrap, center, center);
+            width: 3rem;
+            height: 3rem;
+            color: $white;
+            background: $green-1;
+            border-radius: 1rem 0;
+            cursor: pointer;
+
+            &:hover {
+              background: darken($green-1, 5%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
