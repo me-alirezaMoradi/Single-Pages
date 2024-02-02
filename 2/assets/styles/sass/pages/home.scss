@@ -18,7 +18,7 @@ body {
       align-self: center;
       width: 95%;
       height: 95%;
-      background: $orage-1;
+      background: $green-1;
       border-radius: 1rem;
 
       h1 {
@@ -28,6 +28,77 @@ body {
         font-size: 5rem;
         text-align: center;
         color: $white;
+      }
+    }
+
+    #musics {
+      @include Grid(6, 12);
+      grid-area: 6/4/-2/-1;
+
+      #left-arrow {
+        transform: rotate(180deg);
+        grid-area: 1/-2/2/-1;
+      }
+      
+      #right-arrow {
+        grid-area: 1/-2/2/-1;
+        transform: translateX(-3rem);
+      }
+      
+      #left-arrow,
+      #right-arrow {
+        justify-self: center;
+        align-self: center;
+        width: 3rem;
+        cursor: pointer;
+      }
+
+      ul {
+        @include Flex(row, nowrap, space-around, center);
+        grid-area: 2/1/-1/-1;
+        align-self: start;
+
+        li {
+          @include Flex(column, nowrap, center, center);
+          gap: 1rem;
+          cursor: pointer;
+        }
+
+        #thumbnail {
+          width: 17rem;
+          height: 17rem;
+          background-color: $silver;
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-radius: 4rem 0;
+        }
+
+        #musicName {
+          width: 70%;
+          height: 70%;
+          font-size: 2.5rem;
+          text-align: center;
+          color: $white;
+        }
+
+        #singerName {
+          font-size: 2rem;
+          color: $gray;
+        }
+
+        .song-1 {
+          background: url('../../pictures/Adele-1.webp');
+        }
+        .song-2 {
+          background-image: url('../../pictures/Adele-2.webp');
+        }
+        .song-3 {
+          background: url('../../pictures/Adele-3.jpg');
+        }
+        .song-4 {
+          background-image: url('../../pictures/Adele-4.jpg');
+          background-position: center;
+        }
       }
     }
 
