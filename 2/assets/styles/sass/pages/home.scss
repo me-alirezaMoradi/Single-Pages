@@ -11,6 +11,26 @@ body {
     @include Grid(12, 12);
     grid-area: 1/1/-1/-1;
 
+    header {
+      @include Grid(8, 8);
+      grid-area: 1/4/6/-1;
+      justify-self: center;
+      align-self: center;
+      width: 95%;
+      height: 95%;
+      background: $orage-1;
+      border-radius: 1rem;
+
+      h1 {
+        grid-area: 1/1/-1/-1;
+        justify-self: center;
+        align-self: center;
+        font-size: 5rem;
+        text-align: center;
+        color: $white;
+      }
+    }
+
     #sideMenu {
       @include Grid(12, 4);
       grid-area: 1/1/-1/4;
